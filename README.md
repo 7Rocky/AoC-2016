@@ -12,3 +12,4 @@ go run main.go
 | Problem          | Title                   | Difficulty                     |
 | ---------------- | ----------------------- | ------------------------------ |
 | [Day 01](day_01) | No Time for a Taxicab   | :star::star:                   |
+| [Day 02](day_02) | Bathroom Security       | :star::star:                   |
