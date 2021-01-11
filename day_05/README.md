@@ -38,4 +38,4 @@ You almost choke on your popcorn as the final character falls into place, produc
 
 Given the actual Door ID and this new method, **what is the password**? Be extra proud of your solution if it uses a cinematic "decrypting" animation.
 
-If you still want to see it, you can [get your puzzle input](input.txt).
+Your puzzle input is still **`cxdnnyjw`**.
