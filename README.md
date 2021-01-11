@@ -9,7 +9,9 @@ cd AoC-2016/day_<number>
 go run main.go
 ```
 
-| Problem          | Title                   | Difficulty                     |
-| ---------------- | ----------------------- | ------------------------------ |
-| [Day 01](day_01) | No Time for a Taxicab   | :star::star:                   |
-| [Day 02](day_02) | Bathroom Security       | :star::star:                   |
+| Problem          | Title                      | Difficulty                     |
+| ---------------- | -------------------------- | ------------------------------ |
+| [Day 01](day_01) | No Time for a Taxicab      | :star::star:                   |
+| [Day 02](day_02) | Bathroom Security          | :star::star:                   |
+| [Day 03](day_03) | Squares With Three Sides   | :star:                         |
+| [Day 04](day_04) | Security Through Obscurity | :star::star:                   |
