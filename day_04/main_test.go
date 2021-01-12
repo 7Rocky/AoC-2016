@@ -21,6 +21,6 @@ func TestMain(t *testing.T) {
 		"North Pole object storage ID (2): 984\n"
 
 	if string(out) != want {
-		t.Errorf("Want:\n%s\nGot:\n%s", want, out)
+		t.Errorf("\nWant:\n%s\nGot:\n%s", want, out)
 	}
 }

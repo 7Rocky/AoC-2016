@@ -21,6 +21,6 @@ func TestMain(t *testing.T) {
 		"Possible triangles by columns (2): 1826\n"
 
 	if string(out) != want {
-		t.Errorf("Want:\n%s\nGot:\n%s", want, out)
+		t.Errorf("\nWant:\n%s\nGot:\n%s", want, out)
 	}
 }

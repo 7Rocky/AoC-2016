@@ -21,6 +21,6 @@ func TestMain(t *testing.T) {
 		"Blocks to twice reached position (2): 133\n"
 
 	if string(out) != want {
-		t.Errorf("Want:\n%s\nGot:\n%s", want, out)
+		t.Errorf("\nWant:\n%s\nGot:\n%s", want, out)
 	}
 }

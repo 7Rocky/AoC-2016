@@ -21,6 +21,6 @@ func TestMain(t *testing.T) {
 		"Bathroom code (2): 57DD8\n"
 
 	if string(out) != want {
-		t.Errorf("Want:\n%s\nGot:\n%s", want, out)
+		t.Errorf("\nWant:\n%s\nGot:\n%s", want, out)
 	}
 }
