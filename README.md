@@ -2,11 +2,17 @@
 
 Resolution of the problems in Go language:
 
-```
+```bash
 git clone https://github.com/7Rocky/AoC-2016
 cd AoC-2016/day_<number>
 
 go run main.go
+```
+
+```bash
+cd AoC-2016
+
+make test
 ```
 
 | Problem          | Title                           | Difficulty                     |
