@@ -22,3 +22,6 @@ make test
 | [Day 03](day_03) | Squares With Three Sides        | :star:                         |
 | [Day 04](day_04) | Security Through Obscurity      | :star::star:                   |
 | [Day 05](day_05) | How About a Nice Game of Chess? | :star:                         |
+| [Day 06](day_06) | Signals and Noise               | :star::star:                   |
+| [Day 07](day_07) | Internet Protocol Version 7     | :star::star:                   |
+| [Day 08](day_08) | Two-Factor Authentication       | :star::star:                   |
