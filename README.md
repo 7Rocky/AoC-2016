@@ -25,3 +25,4 @@ make test
 | [Day 06](day_06) | Signals and Noise               | :star::star:                   |
 | [Day 07](day_07) | Internet Protocol Version 7     | :star::star:                   |
 | [Day 08](day_08) | Two-Factor Authentication       | :star::star:                   |
+| [Day 09](day_09) | Explosives in Cyberspace        | :star::star::star:             |
