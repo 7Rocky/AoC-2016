@@ -26,3 +26,4 @@ make test
 | [Day 07](day_07) | Internet Protocol Version 7     | :star::star:                   |
 | [Day 08](day_08) | Two-Factor Authentication       | :star::star:                   |
 | [Day 09](day_09) | Explosives in Cyberspace        | :star::star::star:             |
+| [Day 10](day_10) | Balance Bots                    | :star::star:                   |
