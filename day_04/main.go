@@ -91,7 +91,11 @@ func getDecryptedNames(rooms []room) []room {
 	var decypherNames []room
 
 	for _, r := range rooms {
-		decypherNames = append(decypherNames, room{caesarDecypher(r.name, r.id), r.id, r.checksum})
+		decypherNames = append(decypherNames, room{
+			name:     caesarDecypher(r.name, r.id),
+			id:       r.id,
+			checksum: r.checksum,
+		})
 	}
 
 	return decypherNames
@@ -122,7 +126,7 @@ func main() {
 			id, _ := strconv.Atoi(res[i][2])
 			checksum := res[i][3]
 
-			rooms = append(rooms, room{name, id, checksum})
+			rooms = append(rooms, room{name: name, id: id, checksum: checksum})
 		}
 	}
 
