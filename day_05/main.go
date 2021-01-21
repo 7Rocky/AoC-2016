@@ -9,6 +9,8 @@ import (
 	"strings"
 )
 
+const difficulty = "00000"
+
 func main() {
 	input := "cxdnnyjw"
 
@@ -21,7 +23,7 @@ func main() {
 		hash := md5.Sum([]byte(input + strconv.Itoa(index)))
 		hashString := hex.EncodeToString(hash[:])
 
-		if strings.HasPrefix(hashString, "00000") {
+		if strings.HasPrefix(hashString, difficulty) {
 			if len(password1) < 8 {
 				password1 += string(hashString[5])
 			}
