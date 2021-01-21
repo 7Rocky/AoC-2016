@@ -24,7 +24,6 @@ func getMarker(s string) (int, int) {
 }
 
 func decompressV1(compressed string) int {
-
 	decompressed := ""
 
 	for i := 0; i < len(compressed); i++ {
@@ -85,6 +84,5 @@ func main() {
 	compressed := scanner.Text()
 
 	fmt.Printf("Length of decompressed file V1 (1): %d\n", decompressV1(compressed))
-
 	fmt.Printf("Length of decompressed file V2 (2): %d\n", decompressV2(compressed))
 }
