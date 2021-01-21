@@ -51,7 +51,7 @@ func getABAStrings(ss []string) []string {
 	return abaStrings
 }
 
-func supportsTLS(ip ipv7) bool {
+var supportsTLS = func(ip ipv7) bool {
 	supports := false
 
 	for _, f := range ip.supernet {
@@ -71,7 +71,7 @@ func supportsTLS(ip ipv7) bool {
 	return supports
 }
 
-func supportsSSL(ip ipv7) bool {
+var supportsSSL = func(ip ipv7) bool {
 	abaStrings := getABAStrings(ip.supernet)
 	babStrings := getABAStrings(ip.hypernet)
 
@@ -86,23 +86,11 @@ func supportsSSL(ip ipv7) bool {
 	return false
 }
 
-func countIPSupportingTLS(ips []ipv7) int {
+func countIPSupporting(ips []ipv7, supports func(ip ipv7) bool) int {
 	count := 0
 
 	for _, ip := range ips {
-		if supportsTLS(ip) {
-			count++
-		}
-	}
-
-	return count
-}
-
-func countIPSupportingSSL(ips []ipv7) int {
-	count := 0
-
-	for _, ip := range ips {
-		if supportsSSL(ip) {
+		if supports(ip) {
 			count++
 		}
 	}
@@ -139,6 +127,6 @@ func main() {
 		}
 	}
 
-	fmt.Printf("Number of IPv7 supporting TLS (1): %d\n", countIPSupportingTLS(ips))
-	fmt.Printf("Number of IPv7 supporting SSL (2): %d\n", countIPSupportingSSL(ips))
+	fmt.Printf("Number of IPv7 supporting TLS (1): %d\n", countIPSupporting(ips, supportsTLS))
+	fmt.Printf("Number of IPv7 supporting SSL (2): %d\n", countIPSupporting(ips, supportsSSL))
 }
