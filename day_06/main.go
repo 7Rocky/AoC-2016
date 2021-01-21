@@ -11,15 +11,15 @@ func findCommonCharacters(letterCount map[rune]int) (string, string) {
 	var mostCommon, leastCommon rune
 	max, min := 0, math.MaxUint32
 
-	for c, n := range letterCount {
-		if n > max {
-			max = n
-			mostCommon = c
+	for char, count := range letterCount {
+		if count > max {
+			max = count
+			mostCommon = char
 		}
 
-		if n < min {
-			min = n
-			leastCommon = c
+		if count < min {
+			min = count
+			leastCommon = char
 		}
 	}
 
@@ -36,12 +36,12 @@ func main() {
 	var letterCounts []map[rune]int
 
 	for scanner.Scan() {
-		for i, c := range scanner.Text() {
+		for i, char := range scanner.Text() {
 			if len(letterCounts) == i {
 				letterCounts = append(letterCounts, make(map[rune]int))
 			}
 
-			letterCounts[i][c]++
+			letterCounts[i][char]++
 		}
 	}
 
