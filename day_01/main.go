@@ -33,10 +33,10 @@ func main() {
 
 	instructions := strings.Split(scanner.Text(), ", ")
 
-	position := 0 + 0i
+	position := 0i
 	direction := 1i
 
-	twiceReachedPosition := 0 + 0i
+	twiceReachedPosition := 0i
 	var reachedPositions []complex128
 
 	for _, instruction := range instructions {
@@ -49,7 +49,7 @@ func main() {
 		steps, _ := strconv.Atoi(instruction[1:])
 
 		for i := 0; i < steps; i++ {
-			if containsPosition(position, reachedPositions) && twiceReachedPosition == 0+0i {
+			if containsPosition(position, reachedPositions) && twiceReachedPosition == 0 {
 				twiceReachedPosition = position
 			}
 
