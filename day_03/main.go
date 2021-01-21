@@ -34,8 +34,7 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 
-	var trianglesRows [][]int
-	var trianglesColumns [][]int
+	var trianglesRows, trianglesColumns [][]int
 
 	var triangle1, triangle2, triangle3 []int
 
