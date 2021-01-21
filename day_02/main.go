@@ -6,28 +6,22 @@ import (
 	"os"
 )
 
+var steps = map[rune]complex128{
+	'U': 1i,
+	'R': 1,
+	'D': -1i,
+	'L': -1,
+}
+
 func getBathroomCode(buttons map[complex128]string, instructions []string, position complex128) string {
 	var code string
 
 	for _, instruction := range instructions {
 		for _, d := range instruction {
-			switch d {
-			case 'U':
-				if _, ok := buttons[position+1i]; ok {
-					position += 1i
-				}
-			case 'R':
-				if _, ok := buttons[position+1]; ok {
-					position++
-				}
-			case 'D':
-				if _, ok := buttons[position-1i]; ok {
-					position -= 1i
-				}
-			case 'L':
-				if _, ok := buttons[position-1]; ok {
-					position--
-				}
+			step := steps[d]
+
+			if _, ok := buttons[position+step]; ok {
+				position += step
 			}
 		}
 
