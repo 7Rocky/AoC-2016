@@ -110,7 +110,7 @@ func main() {
 			}
 		}
 
-		rules = append(rules, rule{kind, x, y})
+		rules = append(rules, rule{kind: kind, x: x, y: y})
 	}
 
 	for _, r := range rules {
