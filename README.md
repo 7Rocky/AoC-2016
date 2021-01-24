@@ -28,3 +28,5 @@ make test
 | [Day 09](day_09) | Explosives in Cyberspace               | :star::star::star:             |
 | [Day 10](day_10) | Balance Bots                           | :star::star:                   |
 | [Day 11](day_11) | Radioisotope Thermoelectric Generators | :star::star::star::star::star: |
+| [Day 12](day_12) | Leonardo's Monorail                    | :star::star:                   |
+| [Day 13](day_13) | A Maze of Twisty Little Cubicles       | :star::star::star::star:       |
