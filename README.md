@@ -32,3 +32,4 @@ make test
 | [Day 13](day_13) | A Maze of Twisty Little Cubicles       | :star::star::star::star:       |
 | [Day 14](day_14) | One-Time Pad                           | :star::star::star:             |
 | [Day 15](day_15) | Timing is Everything                   | :star::star:                   |
+| [Day 16](day_16) | Dragon Checksum                        | :star::star::star:             |
