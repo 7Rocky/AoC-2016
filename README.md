@@ -34,3 +34,4 @@ make test
 | [Day 15](day_15) | Timing is Everything                   | :star::star:                   |
 | [Day 16](day_16) | Dragon Checksum                        | :star::star::star:             |
 | [Day 17](day_17) | Two Steps Forward                      | :star::star::star::star:       |
+| [Day 18](day_18) | Like a Rogue                           | :star::star:                   |
