@@ -69,6 +69,7 @@ func solveCrt(rems, mods []int) int {
 
 	return result
 }
+
 func main() {
 	file, _ := os.Open("input.txt")
 
