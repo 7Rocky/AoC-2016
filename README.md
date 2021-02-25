@@ -36,3 +36,4 @@ make test
 | [Day 17](day_17) | Two Steps Forward                      | :star::star::star::star:       |
 | [Day 18](day_18) | Like a Rogue                           | :star::star:                   |
 | [Day 19](day_19) | An Elephant Named Joseph               | :star::star::star::star:       |
+| [Day 20](day_20) | Firewall Rules                         | :star::star::star:             |
