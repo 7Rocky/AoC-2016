@@ -38,3 +38,4 @@ make test
 | [Day 19](day_19) | An Elephant Named Joseph               | :star::star::star::star:       |
 | [Day 20](day_20) | Firewall Rules                         | :star::star::star:             |
 | [Day 21](day_21) | Scrambled Letters and Hash             | :star::star::star::star:       |
+| [Day 22](day_22) | Grid Computing                         | :star::star::star::star::star: |
