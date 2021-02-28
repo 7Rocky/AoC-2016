@@ -43,23 +43,21 @@ func main() {
 	i := 0
 
 	for scanner.Scan() {
-		res := regex.FindAllStringSubmatch(scanner.Text(), -1)
+		res := regex.FindStringSubmatch(scanner.Text())
 
-		for i := range res {
-			a, _ := strconv.Atoi(res[i][1])
-			b, _ := strconv.Atoi(res[i][2])
-			c, _ := strconv.Atoi(res[i][3])
+		a, _ := strconv.Atoi(res[1])
+		b, _ := strconv.Atoi(res[2])
+		c, _ := strconv.Atoi(res[3])
 
-			triangle1 = append(triangle1, a)
-			triangle2 = append(triangle2, b)
-			triangle3 = append(triangle3, c)
+		triangle1 = append(triangle1, a)
+		triangle2 = append(triangle2, b)
+		triangle3 = append(triangle3, c)
 
-			triangle := []int{a, b, c}
+		triangle := []int{a, b, c}
 
-			sortSides(triangle)
+		sortSides(triangle)
 
-			trianglesRows = append(trianglesRows, triangle)
-		}
+		trianglesRows = append(trianglesRows, triangle)
 
 		i++
 
