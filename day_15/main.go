@@ -82,16 +82,14 @@ func main() {
 	regex := regexp.MustCompile(`Disc #(\d+) has (\d+) positions; at time=0, it is at position (\d+).`)
 
 	for scanner.Scan() {
-		res := regex.FindAllStringSubmatch(scanner.Text(), -1)
+		res := regex.FindStringSubmatch(scanner.Text())
 
-		for i := range res {
-			id, _ := strconv.Atoi(res[i][1])
-			mod, _ := strconv.Atoi(res[i][2])
-			init, _ := strconv.Atoi(res[i][3])
+		id, _ := strconv.Atoi(res[1])
+		mod, _ := strconv.Atoi(res[2])
+		init, _ := strconv.Atoi(res[3])
 
-			rems = append(rems, (-init-id)%mod)
-			mods = append(mods, mod)
-		}
+		rems = append(rems, (-init-id)%mod)
+		mods = append(mods, mod)
 	}
 
 	fmt.Printf("Time to press the button (1): %d\n", solveCrt(rems, mods))
