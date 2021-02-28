@@ -111,20 +111,18 @@ func main() {
 		count := strings.Count(scanner.Text(), "[")
 		regex := regexp.MustCompile(strings.Repeat(`(.+)\[(.+)\]`, count) + "(.+)")
 
-		res := regex.FindAllStringSubmatch(scanner.Text(), -1)
+		res := regex.FindStringSubmatch(scanner.Text())
 
 		var supernet, hypernet []string
 
-		for i := range res {
-			for j := 0; j < count; j++ {
-				supernet = append(supernet, res[i][2*j+1])
-				hypernet = append(hypernet, res[i][2*j+2])
-			}
-
-			supernet = append(supernet, res[i][2*count+1])
-
-			ips = append(ips, ipv7{supernet, hypernet})
+		for j := 0; j < count; j++ {
+			supernet = append(supernet, res[2*j+1])
+			hypernet = append(hypernet, res[2*j+2])
 		}
+
+		supernet = append(supernet, res[2*count+1])
+
+		ips = append(ips, ipv7{supernet, hypernet})
 	}
 
 	fmt.Printf("Number of IPv7 supporting TLS (1): %d\n", countIPSupporting(ips, supportsTLS))
