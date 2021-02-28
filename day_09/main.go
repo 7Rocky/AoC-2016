@@ -11,14 +11,10 @@ import (
 
 func getMarker(s string) (int, int) {
 	regex := regexp.MustCompile(`(\d+)x(\d+)`)
-	res := regex.FindAllStringSubmatch(s, -1)
+	res := regex.FindStringSubmatch(s)
 
-	var x, y int
-
-	for i := range res {
-		x, _ = strconv.Atoi(res[i][1])
-		y, _ = strconv.Atoi(res[i][2])
-	}
+	x, _ := strconv.Atoi(res[1])
+	y, _ := strconv.Atoi(res[2])
 
 	return x, y
 }
