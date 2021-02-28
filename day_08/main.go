@@ -80,34 +80,28 @@ func main() {
 		if strings.HasPrefix(scanner.Text(), "rect") {
 			kind = "rect"
 			regex := regexp.MustCompile(`rect (\d+)x(\d+)`)
-			res := regex.FindAllStringSubmatch(scanner.Text(), -1)
+			res := regex.FindStringSubmatch(scanner.Text())
 
-			for i := range res {
-				x, _ = strconv.Atoi(res[i][1])
-				y, _ = strconv.Atoi(res[i][2])
-			}
+			x, _ = strconv.Atoi(res[1])
+			y, _ = strconv.Atoi(res[2])
 		}
 
 		if strings.HasPrefix(scanner.Text(), "rotate row") {
 			kind = "row"
 			regex := regexp.MustCompile(`rotate row y=(\d+) by (\d+)`)
-			res := regex.FindAllStringSubmatch(scanner.Text(), -1)
+			res := regex.FindStringSubmatch(scanner.Text())
 
-			for i := range res {
-				y, _ = strconv.Atoi(res[i][1])
-				x, _ = strconv.Atoi(res[i][2])
-			}
+			y, _ = strconv.Atoi(res[1])
+			x, _ = strconv.Atoi(res[2])
 		}
 
 		if strings.HasPrefix(scanner.Text(), "rotate column") {
 			kind = "column"
 			regex := regexp.MustCompile(`rotate column x=(\d+) by (\d+)`)
-			res := regex.FindAllStringSubmatch(scanner.Text(), -1)
+			res := regex.FindStringSubmatch(scanner.Text())
 
-			for i := range res {
-				x, _ = strconv.Atoi(res[i][1])
-				y, _ = strconv.Atoi(res[i][2])
-			}
+			x, _ = strconv.Atoi(res[1])
+			y, _ = strconv.Atoi(res[2])
 		}
 
 		rules = append(rules, rule{kind: kind, x: x, y: y})
