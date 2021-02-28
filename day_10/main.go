@@ -73,11 +73,9 @@ func getMatches(line, reString string) (int, int, int) {
 
 	var id, low, high int
 
-	for i := range res {
-		id, _ = strconv.Atoi(res[i][1])
-		low, _ = strconv.Atoi(res[i][2])
-		high, _ = strconv.Atoi(res[i][3])
-	}
+	id, _ = strconv.Atoi(res[0][1])
+	low, _ = strconv.Atoi(res[0][2])
+	high, _ = strconv.Atoi(res[0][3])
 
 	return id, low, high
 }
@@ -96,14 +94,10 @@ func main() {
 
 		if strings.Contains(line, "value") {
 			regex := regexp.MustCompile(`value (\d+) goes to bot (\d+)`)
-			res := regex.FindAllStringSubmatch(line, -1)
+			res := regex.FindStringSubmatch(line)
 
-			var microchip, id int
-
-			for i := range res {
-				microchip, _ = strconv.Atoi(res[i][1])
-				id, _ = strconv.Atoi(res[i][2])
-			}
+			microchip, _ := strconv.Atoi(res[1])
+			id, _ := strconv.Atoi(res[2])
 
 			if b, ok := bots[id]; !ok {
 				bots[id] = &bot{id, []int{microchip}, []int{-1, -1}, []int{-1, -1}}
