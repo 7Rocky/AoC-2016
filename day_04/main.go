@@ -119,15 +119,13 @@ func main() {
 	regex := regexp.MustCompile(`(\D+)-(\d+)\[(\D+)\]`)
 
 	for scanner.Scan() {
-		res := regex.FindAllStringSubmatch(scanner.Text(), -1)
+		res := regex.FindStringSubmatch(scanner.Text())
 
-		for i := range res {
-			name := res[i][1]
-			id, _ := strconv.Atoi(res[i][2])
-			checksum := res[i][3]
+		name := res[1]
+		id, _ := strconv.Atoi(res[2])
+		checksum := res[3]
 
-			rooms = append(rooms, room{name: name, id: id, checksum: checksum})
-		}
+		rooms = append(rooms, room{name: name, id: id, checksum: checksum})
 	}
 
 	realRooms := getRealRooms(rooms)
