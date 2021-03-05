@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"reflect"
 	"strconv"
 )
 
@@ -37,20 +38,6 @@ func getPointRepresentation(x, y int) string {
 	}
 
 	return "."
-}
-
-func equals(arr1, arr2 []int) bool {
-	if len(arr1) != len(arr2) {
-		return false
-	}
-
-	for i, a := range arr1 {
-		if a != arr2[i] {
-			return false
-		}
-	}
-
-	return true
 }
 
 type position struct {
@@ -96,7 +83,7 @@ func breadthFirstSearch(root position, target []int) int {
 		pos = queue[0]
 		queue = queue[1:]
 
-		if equals(pos.coordinates, target) {
+		if reflect.DeepEqual(pos.coordinates, target) {
 			break
 		}
 
