@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"reflect"
 	"regexp"
 	"sort"
 )
@@ -41,20 +42,6 @@ func sortState(state []complex128) {
 	sort.Slice(state, func(i, j int) bool {
 		return ordinalComplex(state[i]) < ordinalComplex(state[j])
 	})
-}
-
-func equals(arr1, arr2 []complex128) bool {
-	if len(arr1) != len(arr2) {
-		return false
-	}
-
-	for i, a := range arr1 {
-		if a != arr2[i] {
-			return false
-		}
-	}
-
-	return true
 }
 
 func possibleStates(state []complex128) [][]complex128 {
@@ -180,7 +167,7 @@ func isPossible(state []complex128) bool {
 
 func containsState(situations []situation, state []complex128) bool {
 	for _, s := range situations {
-		if equals(s.state, state) {
+		if reflect.DeepEqual(s.state, state) {
 			return true
 		}
 	}
@@ -195,7 +182,7 @@ func adjacentSituations(sit situation) []situation {
 		sortState(s)
 
 		if isPossible(s) {
-			if !containsState(situations, s) && !equals(s, sit.state) {
+			if !containsState(situations, s) && !reflect.DeepEqual(s, sit.state) {
 				situations = append(situations, situation{state: s})
 			}
 		}
@@ -224,7 +211,7 @@ func breadthFirstSearch(root situation, target []complex128) int {
 		sit = queue[0]
 		queue = queue[1:]
 
-		if equals(sit.state, target) {
+		if reflect.DeepEqual(sit.state, target) {
 			break
 		}
 
